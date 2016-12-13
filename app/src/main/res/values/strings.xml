@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WiFiPasswordhack</string>
+    <string name="home_screen">WiFi PASSWORD HACK</string>
+    <string name="home_button_text">START NOW</string>
+    <string name="list_name">Wi-Fi networks</string>
+    <string name="text_loader">Please wait while we are hacking the network</string>
+</resources>
