@@ -1,5 +1,6 @@
 package com.apps.mustango.wifipasswordhack;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,17 +25,20 @@ import com.tapjoy.TJPlacementListener;
 import com.tapjoy.TJPlacementVideoListener;
 import com.tapjoy.TJSpendCurrencyListener;
 import com.tapjoy.Tapjoy;
+import com.tapjoy.TapjoyConnectCore;
 import com.tapjoy.TapjoyConnectFlag;
 import com.tapjoy.TapjoyLog;
 
 import java.util.Hashtable;
+
+import static com.tapjoy.TapjoyConnectCore.getContext;
 
 
 /**
  * Created by mustango on 15.12.2016.
  */
 
-public class TapjoyEasyApp extends AppCompatActivity implements View.OnClickListener, TJGetCurrencyBalanceListener, TJPlacementListener{
+public class TapjoyEasyApp extends Activity implements View.OnClickListener, TJGetCurrencyBalanceListener, TJPlacementListener{
 
     public static final String TAG = "TapjoyEasyApp";
 
@@ -74,18 +78,19 @@ public class TapjoyEasyApp extends AppCompatActivity implements View.OnClickList
         // OPTIONAL: For custom startup flags.
         Hashtable<String, Object> connectFlags = new Hashtable<String, Object>();
         connectFlags.put(TapjoyConnectFlag.ENABLE_LOGGING, "true");
-
-        // If you are not using Tapjoy Managed currency, you would set your own user ID here.
-        //	connectFlags.put(TapjoyConnectFlag.USER_ID, "d6363fbd-edad-45ba-9b75-f89028b4b66c");
+                // If you are not using Tapjoy Managed currency, you would set your own user ID here.
+       connectFlags.put(TapjoyConnectFlag.USER_ID, "1jY_ve2tRbqbdfiQKLS2bAECB84jvJH4ghWgmrCe5k1rna9gZbp8Zhr_cUx1");
 
         // Connect with the Tapjoy server.  Call this when the application first starts.
         // REPLACE THE SDK KEY WITH YOUR TAPJOY SDK Key.
-        String tapjoySDKKey = "u6SfEbh_TA-WMiGqgQ3W8QECyiQIURFEeKm0zbOggubusy-o5ZfXp33sTXaD";
+        String tapjoySDKKey = "d6363fbd-edad-45ba-9b75-f89028b4b66c";
 
         Tapjoy.setGcmSender("34027022155");
 
         // NOTE: This is the only step required if you're an advertiser.
-        Tapjoy.connect(this, tapjoySDKKey, connectFlags, new TJConnectListener() {
+       // Tapjoy.connect(getApplicationContext(), tapjoySDKKey, connectFlags);
+
+       Tapjoy.connect(getApplicationContext(), tapjoySDKKey, connectFlags, new TJConnectListener() {
             @Override
             public void onConnectSuccess() {
                 TapjoyEasyApp.this.onConnectSuccess();
@@ -165,7 +170,7 @@ public class TapjoyEasyApp extends AppCompatActivity implements View.OnClickList
 
                 case R.id.buttonShowOffers:
                     // Disable button
-                    currentButton.setEnabled(false);
+                  ///  currentButton.setEnabled(false);
                     // Show Offers Placement
                     callShowOffers();
                     break;
