@@ -5,6 +5,7 @@ android {
     buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.apps.mustango.wifipasswordhack"
+        multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
@@ -24,10 +25,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile files('libs/tapjoyconnectlibrary.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.google.android.gms:play-services:+'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.mikhaellopez:circularprogressbar:1.1.1'
-    compile 'com.google.android.gms:play-services:10.0.1'
-    compile 'com.tapjoy:tapjoy-android-sdk:11.7.0@aar'
+    compile files('libs/tapjoyconnectlibrary.jar')
+
     testCompile 'junit:junit:4.12'
 }
