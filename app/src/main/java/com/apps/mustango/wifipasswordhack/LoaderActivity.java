@@ -1,6 +1,7 @@
 package com.apps.mustango.wifipasswordhack;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
@@ -52,7 +53,9 @@ public class LoaderActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 dialog.cancel();
-                                onClick2();
+                                Intent i=new Intent(LoaderActivity.this,TapjoyEasyApp.class);
+                                startActivity(i);
+                              //  onClick2();
                             }
                         });
         AlertDialog alert = builder.create();

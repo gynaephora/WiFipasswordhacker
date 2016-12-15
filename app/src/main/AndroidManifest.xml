@@ -37,6 +37,15 @@
             android:screenOrientation="portrait">
         </activity>>
 
+        <activity
+            android:name=".TapjoyEasyApp"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden" >
+                 </activity>
+
+
         <!-- Tapjoy -->
         <activity
             android:name="com.tapjoy.TJAdUnitActivity"

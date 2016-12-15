@@ -24,17 +24,9 @@
                 android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
                 android:text="Offerwall"
-                android:id="@+id/OffersButton"
+                android:id="@+id/buttonShowOffers"
                 android:visibility="visible"
                 android:layout_margin="5dp"/>
-
-            <Button
-                android:id="@+id/GetDirectPlayVideoAd"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Get Direct Play Video Ad"
-                android:visibility="visible" />
 
             <View
                 android:layout_height="5dp"
